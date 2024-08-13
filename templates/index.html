@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickHouse Records</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+        th:hover {
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+<h1>ClickHouse Records</h1>
+<table>
+    <thead>
+    <tr>
+        <th><a href="/?sort=asc">ID &#9650;</a>/<a href="/?sort=desc">ID &#9660;</a></th>
+        <th>Username</th>
+        <th>Score</th>
+        <th>Telephone</th>
+        <th>Code1</th>
+        <th>Code2</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .records}}
+    <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Username}}</td>
+        <td>{{.Score}}</td>
+        <td>{{.Telephone}}</td>
+        <td>{{.Code1}}</td>
+        <td>{{.Code2}}</td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+</body>
+</html>
